@@ -32,10 +32,7 @@ Everything runs locally: no database, no network calls, no external services. Th
 │   ├── gen.sh              # Regenerates the Parquet files
 │   ├── customers.parquet   # 1,000 synthetic customers
 │   └── orders.parquet      # 5,000 synthetic orders
-├── pyproject.toml          # Dependencies (managed with uv)
-├── uv.lock                 # Locked dependency graph
-├── pack-proj.sh            # Local helper (gitignored)
-└── project_snapshot.txt    # Local helper (gitignored)
+└── pyproject.toml          # Dependencies (managed with uv)
 ```
 
 ---
