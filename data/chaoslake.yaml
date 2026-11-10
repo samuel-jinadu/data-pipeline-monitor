@@ -1,0 +1,29 @@
+tables:
+  - name: customers
+    rows: 1000
+    columns:
+      - {name: id,           type: integer, primary_key: true}
+      - {name: full_name,    type: name}
+      - {name: email,        type: email, unique: true}
+      - {name: signup_date,  type: datetime, range: [2020-01-01, 2024-12-31]}
+    chaos:
+      null_probability: 0.02
+
+  - name: orders
+    rows: 5000
+    columns:
+      - {name: id,           type: integer, primary_key: true}
+      - {name: customer_id,  type: foreign_key, references: customers.id}
+      - {name: amount,       type: float, range: [5, 5000], distribution: lognormal}
+      - {name: order_date,   type: datetime, range: [2021-01-01, 2024-12-31]}
+      - {name: status,       type: string}
+    chaos:
+      null_probability: 0.03
+      duplicate_probability: 0.01
+      drift:
+        field: amount
+        distribution: normal
+        start_after_row: 4000
+      format_inconsistency:
+        fields: [order_date]
+        style: mixed_us_dates

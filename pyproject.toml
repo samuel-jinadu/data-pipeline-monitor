@@ -1,0 +1,10 @@
+[project]
+name = "data-pipeline-monitor"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "chaoslake>=0.1.2",
+    "streamlit>=1.67.0",
+    "polars>=1.0.0"
+]
+

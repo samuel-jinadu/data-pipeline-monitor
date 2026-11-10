@@ -1,0 +1,7 @@
+pack-proj.sh
+project_snapshot.txt
+.venv/
+__pycache__/
+*.pyc
+.streamlit/
+.vscode
